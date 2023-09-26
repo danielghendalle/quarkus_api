@@ -17,9 +17,9 @@ public class CustomerService {
 
 
     public List<Customer> findAllCustomers() {
-        return customerRepository.findAll().list();
+        return customerRepository.listAll();
     }
-
+    @Transactional
     public void addCustomer(Customer customer) {
         customerRepository.persist(customer);
     }

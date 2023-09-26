@@ -8,7 +8,6 @@ import jakarta.ws.rs.core.Response;
 import org.quarkusapi.entity.Customer;
 import org.quarkusapi.service.CustomerService;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Path("/customers")
@@ -39,7 +38,6 @@ public class CustomerController {
 
     @PUT
     @Path("/{id}")
-    @Transactional
     @Consumes(MediaType.APPLICATION_JSON)
     public Response updateCustomer(@PathParam("id") Long id, Customer customer) {
         return customerService.updateCustomer(id, customer);
